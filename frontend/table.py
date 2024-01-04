@@ -8,8 +8,9 @@ WINDOW_SIZE = BOARD_SIZE * TILE_SIZE
 LINE_COLOR = (0, 0, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-YELLOW = (244, 214, 167)
-
+YELLOW = (245, 255, 196)
+BRUN = (102,57,18)
+BORColor=(56,31,10)
 COLUMN = 8
 ROW = 8
 screen = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
@@ -22,7 +23,7 @@ def draw_board():
     screen.fill(WHITE)
     for i in range(BOARD_SIZE):
         for j in range(BOARD_SIZE):
-            color = WHITE if (i + j) % 2 == 0 else BLACK
+            color = YELLOW if (i + j) % 2 == 0 else BRUN
             pygame.draw.rect(screen, color, (i * TILE_SIZE, j * TILE_SIZE, TILE_SIZE, TILE_SIZE))
 
         pygame.draw.line(screen, LINE_COLOR, (i * TILE_SIZE, 0), (i * TILE_SIZE, WINDOW_SIZE), 1)
